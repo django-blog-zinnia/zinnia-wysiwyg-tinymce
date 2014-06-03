@@ -15,6 +15,8 @@ TIME_ZONE = 'Europe/Paris'
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = ''
+
 MEDIA_URL = '/media/'
 
 SECRET_KEY = 'jo-1rzm(%sf)3#n+fa7j945yuv3(pt63abhi12_t7e^^5q8dyw'
