@@ -19,5 +19,8 @@ Installation
 
 You are done !
 
+TinyMCE can be customized by overriding the
+``admin/zinnia/entry/tinymce_textareas.js`` template.
+
 .. _TinyMCE: http://www.tinymce.com/
 .. _django-tinymce: https://github.com/aljosa/django-tinymce
