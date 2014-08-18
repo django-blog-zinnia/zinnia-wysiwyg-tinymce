@@ -12,7 +12,9 @@ Installation
 
   $ pip install zinnia-wysiwyg-tinymce
 
-  `django-tinymce`_ will also be installed as a dependency.
+  `django-tinymce`_ will also be installed as a dependency if not present.
+  In this case also follow the `install instruction of django-tinymce`_ before
+  going further.
 
 * Register the ``'zinnia_tinymce'`` in your ``INSTALLED_APPS`` after the
   ``'zinnia'`` application.
@@ -24,3 +26,4 @@ TinyMCE can be customized by overriding the
 
 .. _TinyMCE: http://www.tinymce.com/
 .. _django-tinymce: https://github.com/aljosa/django-tinymce
+.. _install instruction of django-tinymce: http://django-tinymce.readthedocs.org/en/latest/installation.html#id2
