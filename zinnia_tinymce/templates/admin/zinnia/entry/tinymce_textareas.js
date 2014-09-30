@@ -20,4 +20,5 @@ tinyMCE.init({
 	theme_advanced_buttons1 : "formatselect,fontsizeselect,|,undo,redo,|,cut,copy,paste,pastetext,pasteword,|,search,replace,|,visualchars,visualaid,cleanup,code,preview,fullscreen",
 	theme_advanced_buttons2 : "bold,italic,underline,strikethrough,|,forecolor,backcolor,removeformat,|,justifyleft,justifycenter,justifyright,justifyfull,|,sub,sup,|,bullist,numlist,|,outdent,indent,|,link,unlink,anchor,image,blockquote,hr,charmap,",
 	theme_advanced_buttons3 : "",
+	file_browser_callback : "mce_filebrowser",
 	});

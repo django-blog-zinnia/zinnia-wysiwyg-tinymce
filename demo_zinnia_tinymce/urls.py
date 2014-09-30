@@ -19,6 +19,7 @@ urlpatterns = patterns(
     url(r'^blog/', include('zinnia.urls', namespace='zinnia')),
     url(r'^comments/', include('django_comments.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^tinymce/filebrowser/', include('zinnia_tinymce.urls')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^admin/', include(admin.site.urls)),
 )

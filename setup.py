@@ -32,5 +32,6 @@ setup(
     license=zinnia_tinymce.__license__,
     include_package_data=True,
     zip_safe=False,
-    install_requires=['django-tinymce']
+    install_requires=['django-tinymce',
+                      'sorl-thumbnail']
 )
