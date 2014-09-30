@@ -28,7 +28,9 @@ Installation
 
     url(r'^tinymce/filebrowser/', include('zinnia_tinymce.urls')),
 
-You are done !
+* Run the ``syncdb`` or ``migrate`` command.
+
+* You are done !
 
 TinyMCE can be customized by overriding the
 ``admin/zinnia/entry/tinymce_textareas.js`` template.
