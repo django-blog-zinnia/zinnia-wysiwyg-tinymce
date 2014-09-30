@@ -86,6 +86,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_comments',
     'mptt',
+    'south',
     'tagging',
     'tinymce',
     'zinnia',
