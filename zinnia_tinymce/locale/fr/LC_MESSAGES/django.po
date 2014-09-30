@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: zinnia_tinymce\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-30 15:51+0200\n"
+"PO-Revision-Date: 2014-09-30 15:54+0100\n"
+"Last-Translator: Fantomas42 <j.fache@liberation.fr>\n"
+"Language-Team: Fantomas42 <fantomas42@gmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: models.py:30
+msgid "Image"
+msgstr "Image"
+
+#: models.py:31
+msgid "Document"
+msgstr "Document"
+
+#: models.py:35
+msgid "file type"
+msgstr "type de fichier"
+
+#: models.py:38
+msgid "file / image"
+msgstr "fichier / image"
+
+#: models.py:41
+msgid "creation date"
+msgstr "date de création"
+
+#: models.py:51
+msgid "file"
+msgstr "fichier"
+
+#: models.py:52
+msgid "files"
+msgstr "fichiers"
+
+#: templates/zinnia_tinymce/filemodel_form.html:5
+msgid "File Browser"
+msgstr "Navigateur de Fichiers"
+
+#: templates/zinnia_tinymce/filemodel_form.html:66
+msgid "Images list"
+msgstr "Liste d'images"
+
+#: templates/zinnia_tinymce/filemodel_form.html:75
+msgid "Documents list"
+msgstr "Liste de documents"
+
+#: templates/zinnia_tinymce/filemodel_form.html:82
+msgid "Upload new"
+msgstr "Téléversez"
+
+#: templates/zinnia_tinymce/filemodel_form.html:93
+msgid "Previously uploaded images"
+msgstr "Images précédemment téléversées"
+
+#: templates/zinnia_tinymce/filemodel_form.html:103
+#: templates/zinnia_tinymce/filemodel_form.html:124
+msgid "Remove"
+msgstr "Supprimer"
+
+#: templates/zinnia_tinymce/filemodel_form.html:108
+msgid "No images uploaded"
+msgstr "Pas d'images téléversées"
+
+#: templates/zinnia_tinymce/filemodel_form.html:116
+msgid "Previously uploaded documents"
+msgstr "Documents précédemment téléversés"
+
+#: templates/zinnia_tinymce/filemodel_form.html:129
+msgid "No documents uploaded"
+msgstr "Pas de documents téléversés"
+
+#: templates/zinnia_tinymce/filemodel_form.html:137
+msgid "Upload file"
+msgstr "Fichier à  téléverser"
+
+#: templates/zinnia_tinymce/filemodel_form.html:144
+msgid "Insert"
+msgstr "Insérer"
+
+#: templates/zinnia_tinymce/filemodel_form.html:145
+msgid "Cancel"
+msgstr "Annuler"
+

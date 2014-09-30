@@ -1,0 +1,7 @@
+include README.rst
+include LICENSE
+include versions.cfg
+include buildout.cfg
+include bootstrap.py
+recursive-include demo_zinnia_tinymce *.py
+recursive-include zinnia_tinymce/templates *.txt *.html *.xml *.js
