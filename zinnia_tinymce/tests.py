@@ -46,4 +46,5 @@ class EntryAdminTinyMCETestCase(BaseAdminTestCase):
              '/admin/zinnia/entry/autocomplete_tags/',
              '/static/tiny_mce/tiny_mce.js',
              'django_tinymce/init_tinymce.js',
-             '/tinymce/js/textareas/admin/zinnia/entry/'])
+             '/tinymce/js/textareas/admin/zinnia/entry/',
+             '/static/zinnia_tinymce/js/filebrowser.js'])
