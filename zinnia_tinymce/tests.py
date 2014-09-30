@@ -45,4 +45,5 @@ class EntryAdminTinyMCETestCase(BaseAdminTestCase):
              '/static/zinnia/js/jquery.autocomplete.js',
              '/admin/zinnia/entry/autocomplete_tags/',
              '/static/tiny_mce/tiny_mce.js',
+             'django_tinymce/init_tinymce.js',
              '/tinymce/js/textareas/admin/zinnia/entry/'])
