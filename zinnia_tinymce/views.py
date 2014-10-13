@@ -5,7 +5,9 @@ from django.shortcuts import get_object_or_404
 from django.views.generic.edit import CreateView
 from django.views.generic.base import RedirectView
 from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_control
 from django.contrib.admin.views.decorators import staff_member_required
+
 
 from zinnia_tinymce.models import FileModel
 
@@ -13,6 +15,7 @@ from zinnia_tinymce.models import FileModel
 class StaffMemberRequiredMixin(object):
 
     @method_decorator(staff_member_required)
+    @method_decorator(cache_control(max_age=0))
     def dispatch(self, *args, **kwargs):
         return super(StaffMemberRequiredMixin, self).dispatch(*args, **kwargs)
 
