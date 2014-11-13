@@ -21,4 +21,5 @@ tinyMCE.init({
 	theme_advanced_buttons2 : "bold,italic,underline,strikethrough,|,forecolor,backcolor,removeformat,|,justifyleft,justifycenter,justifyright,justifyfull,|,sub,sup,|,bullist,numlist,|,outdent,indent,|,link,unlink,anchor,image,blockquote,hr,charmap,",
 	theme_advanced_buttons3 : "",
 	file_browser_callback : "mce_filebrowser",
-	});
+	external_link_list_url : "{% url 'tinymce-external-links' %}",
+});
