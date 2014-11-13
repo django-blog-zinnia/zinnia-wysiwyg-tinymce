@@ -26,7 +26,7 @@ Installation
 
 * Include this URLset into your project's urls.py: ::
 
-    url(r'^tinymce/filebrowser/', include('zinnia_tinymce.urls')),
+    url(r'^tinymce/zinnia/', include('zinnia_tinymce.urls')),
 
 * Run the ``syncdb`` or ``migrate`` command.
 
