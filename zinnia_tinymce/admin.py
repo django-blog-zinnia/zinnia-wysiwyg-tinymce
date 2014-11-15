@@ -2,7 +2,6 @@
 from django.forms import Media
 from django.contrib import admin
 from django.core.urlresolvers import reverse
-from django.contrib.staticfiles.storage import staticfiles_storage
 
 from tinymce.widgets import TinyMCE
 
@@ -23,8 +22,7 @@ class EntryAdminTinyMCEMixin(object):
 
         media += TinyMCE().media + Media(
             js=[reverse('tinymce-js', args=['admin/zinnia/entry']),
-                staticfiles_storage.url(
-                    'zinnia_tinymce/js/filebrowser.js')]
+                reverse('tinymce-filebrowser-callback')]
         )
 
         return media
