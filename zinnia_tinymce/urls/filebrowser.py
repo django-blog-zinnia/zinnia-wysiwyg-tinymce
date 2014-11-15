@@ -6,10 +6,14 @@ from django.conf.urls import patterns
 
 from zinnia_tinymce.views import RemoveFileView
 from zinnia_tinymce.views import FileBrowserView
+from zinnia_tinymce.views import FileBrowserCallBackView
 
 
 urlpatterns = patterns(
     '',
+    url(r'^callback.js$',
+        FileBrowserCallBackView.as_view(),
+        name='tinymce-filebrowser-callback'),
     url(r'^(?P<file_type>\w+)/$',
         FileBrowserView.as_view(),
         name='tinymce-filebrowser'),
