@@ -30,6 +30,24 @@ class EntryLinksView(StaffMemberRequiredMixin,
     content_type = 'application/javascript'
 
 
+class ImageLinksView(StaffMemberRequiredMixin,
+                     ListView):
+    template_name = 'zinnia_tinymce/image_links.js'
+    content_type = 'application/javascript'
+
+    def get_queryset(self):
+        return FileModel.objects.filter(file_type='image')
+
+
+class FileLinksView(StaffMemberRequiredMixin,
+                    ListView):
+    template_name = 'zinnia_tinymce/file_links.js'
+    content_type = 'application/javascript'
+
+    def get_queryset(self):
+        return FileModel.objects.filter(file_type='file')
+
+
 class FileBrowserCallBackView(StaffMemberRequiredMixin,
                               TemplateView):
     template_name = 'zinnia_tinymce/filebrowser.js'
