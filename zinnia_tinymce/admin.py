@@ -7,6 +7,7 @@ from tinymce.widgets import TinyMCE
 
 from zinnia.models import Entry
 from zinnia.admin.entry import EntryAdmin
+from zinnia.settings import ENTRY_BASE_MODEL
 
 
 class EntryAdminTinyMCEMixin(object):
@@ -36,5 +37,7 @@ class EntryAdminTinyMCE(EntryAdminTinyMCEMixin,
     """
     pass
 
-admin.site.unregister(Entry)
-admin.site.register(Entry, EntryAdminTinyMCE)
+
+if ENTRY_BASE_MODEL == 'zinnia.models_bases.entry.AbstractEntry':
+    admin.site.unregister(Entry)
+    admin.site.register(Entry, EntryAdminTinyMCE)
