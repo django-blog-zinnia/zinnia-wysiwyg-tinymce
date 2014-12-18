@@ -87,7 +87,6 @@ INSTALLED_APPS = (
     'django_comments',
     'mptt',
     'sorl.thumbnail',
-    'south',
     'tagging',
     'tinymce',
     'zinnia',

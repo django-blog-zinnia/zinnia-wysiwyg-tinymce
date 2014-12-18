@@ -2,10 +2,15 @@
 Views for filebrowser in TinyMCE
 """
 from django.shortcuts import get_object_or_404
+from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from django.views.generic.base import RedirectView
+from django.views.generic.base import TemplateView
 from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_control
 from django.contrib.admin.views.decorators import staff_member_required
+
+from zinnia.models import Entry
 
 from zinnia_tinymce.models import FileModel
 
@@ -13,8 +18,40 @@ from zinnia_tinymce.models import FileModel
 class StaffMemberRequiredMixin(object):
 
     @method_decorator(staff_member_required)
+    @method_decorator(cache_control(max_age=0))
     def dispatch(self, *args, **kwargs):
         return super(StaffMemberRequiredMixin, self).dispatch(*args, **kwargs)
+
+
+class EntryLinksView(StaffMemberRequiredMixin,
+                     ListView):
+    model = Entry
+    template_name = 'zinnia_tinymce/entry_links.js'
+    content_type = 'application/javascript'
+
+
+class ImageLinksView(StaffMemberRequiredMixin,
+                     ListView):
+    template_name = 'zinnia_tinymce/image_links.js'
+    content_type = 'application/javascript'
+
+    def get_queryset(self):
+        return FileModel.objects.filter(file_type='image')
+
+
+class FileLinksView(StaffMemberRequiredMixin,
+                    ListView):
+    template_name = 'zinnia_tinymce/file_links.js'
+    content_type = 'application/javascript'
+
+    def get_queryset(self):
+        return FileModel.objects.filter(file_type='file')
+
+
+class FileBrowserCallBackView(StaffMemberRequiredMixin,
+                              TemplateView):
+    template_name = 'zinnia_tinymce/filebrowser.js'
+    content_type = 'application/javascript'
 
 
 class FileBrowserView(StaffMemberRequiredMixin,

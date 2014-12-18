@@ -1,6 +1,6 @@
 function mce_filebrowser(field_name, url, type, win) {
     tinyMCE.activeEditor.windowManager.open({
-        url: "/tinymce/filebrowser/" + type + "/",
+        url: "{% url "tinymce-filebrowser-dispatch" %}" + type + "/",
         width: 400,
         height: 400,
         movable: true,

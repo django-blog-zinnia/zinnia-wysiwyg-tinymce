@@ -2,12 +2,12 @@
 from django.forms import Media
 from django.contrib import admin
 from django.core.urlresolvers import reverse
-from django.contrib.staticfiles.storage import staticfiles_storage
 
 from tinymce.widgets import TinyMCE
 
 from zinnia.models import Entry
 from zinnia.admin.entry import EntryAdmin
+from zinnia.settings import ENTRY_BASE_MODEL
 
 
 class EntryAdminTinyMCEMixin(object):
@@ -23,8 +23,7 @@ class EntryAdminTinyMCEMixin(object):
 
         media += TinyMCE().media + Media(
             js=[reverse('tinymce-js', args=['admin/zinnia/entry']),
-                staticfiles_storage.url(
-                    'zinnia_tinymce/js/filebrowser.js')]
+                reverse('tinymce-filebrowser-callback')]
         )
 
         return media
@@ -38,5 +37,7 @@ class EntryAdminTinyMCE(EntryAdminTinyMCEMixin,
     """
     pass
 
-admin.site.unregister(Entry)
-admin.site.register(Entry, EntryAdminTinyMCE)
+
+if ENTRY_BASE_MODEL == 'zinnia.models_bases.entry.AbstractEntry':
+    admin.site.unregister(Entry)
+    admin.site.register(Entry, EntryAdminTinyMCE)

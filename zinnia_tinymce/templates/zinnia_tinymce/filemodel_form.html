@@ -100,7 +100,7 @@
                         <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" border="0" />
                       </a>
                     {% endthumbnail %}
-                    <a href="{% url 'tinymce-filebrowser-remove' file_type img.id %}" title="{% trans 'Remove' %}" class="rm" onClick="FileBrowserDialogue.delete_file(this); return false;">x</a>
+                    <a href="{% url 'tinymce-filebrowser-remove' file_type img.id %}" title="{% trans 'Remove' %}" class="rm" onClick="FileBrowserDialogue.delete_file(this); return true;">x</a>
                   </li>
                 {% endfor %}
               </ul>
@@ -121,7 +121,7 @@
                     <a href="{{ doc.uploaded_file.url }}" onClick="FileBrowserDialogue.file_in_use(this);return false;">
                       {{ doc }}
                     </a>&nbsp;
-                    <a href="{% url 'tinymce-filebrowser-remove' file_type doc.id %}" title="{% trans 'Remove' %}" class="rm" onClick="FileBrowserDialogue.delete_file(this); return false;">x</a>
+                    <a href="{% url 'tinymce-filebrowser-remove' file_type doc.id %}" title="{% trans 'Remove' %}" class="rm" onClick="FileBrowserDialogue.delete_file(this); return true;">x</a>
                   </li>
                 {% endfor %}
               </ul>
