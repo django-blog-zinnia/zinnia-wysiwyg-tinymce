@@ -1,2 +1,8 @@
 django-apps-src
+build/*
+dist/*
+zinnia_wysiwyg_tinymce.egg-info/*
 demo_zinnia_tinymce/demo.db*
+*.py[co]
+*.sw[po]
+.coverage
