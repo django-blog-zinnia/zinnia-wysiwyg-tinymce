@@ -11,7 +11,7 @@ matrix:
 install:
     - pip install -U setuptools
     - python bootstrap.py
-    ./bin/buildout
+    - ./bin/buildout
 before_script:
     - ./bin/flake8 zinnia_tinymce
 script:
