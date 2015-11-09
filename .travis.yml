@@ -6,28 +6,13 @@ python:
     - 3.3
     - 3.4
     - "pypy"
-
-env:
-    - DJANGO_PACKAGE="Django>=1.7,<1.8"
-    - DJANGO_PACKAGE="Django>=1.8,<1.9"
-
 matrix:
     fast_finish: true
-
 install:
-    - python setup.py install
-    - pip install "${DJANGO_PACKAGE:-Django}" 'coverage<4'
-    - pip install -r requirements.txt
-
+    - pip install -U setuptools
+    - python bootstrap.py
+    ./bin/buildout
 before_script:
-    - cd demo_zinnia_tinymce
-
+    - ./bin/flake8 zinnia_tinymce
 script:
-    - coverage run manage.py test
-
-after_success:
-    - ./bin/coveralls
-
-# notifications:
-#     irc:
-#         - "irc.freenode.org#django-blog-zinnia"
+    - ./bin/demo test zinnia_tinymce
