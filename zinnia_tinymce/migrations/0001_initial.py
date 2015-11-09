@@ -1,31 +1,35 @@
-from south.db import db
-from south.v2 import SchemaMigration
+from django.db import models
+from django.db import migrations
+
+import zinnia_tinymce.models
 
 
-class Migration(SchemaMigration):
+class Migration(migrations.Migration):
 
-    def forwards(self, orm):
-        # Adding model 'FileModel'
-        db.create_table(u'zinnia_tinymce_filemodel', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('file_type', self.gf('django.db.models.fields.CharField')(max_length=35)),
-            ('uploaded_file', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
-            ('creation_date', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
-        ))
-        db.send_create_signal(u'zinnia_tinymce', ['FileModel'])
+    dependencies = [
+    ]
 
-    def backwards(self, orm):
-        # Deleting model 'FileModel'
-        db.delete_table(u'zinnia_tinymce_filemodel')
-
-    models = {
-        'zinnia_tinymce.filemodel': {
-            'Meta': {'ordering': "['-creation_date']", 'object_name': 'FileModel'},
-            'creation_date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
-            'file_type': ('django.db.models.fields.CharField', [], {'max_length': '35'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'uploaded_file': ('django.db.models.fields.files.FileField', [], {'max_length': '100'})
-        }
-    }
-
-    complete_apps = ['zinnia_tinymce']
+    operations = [
+        migrations.CreateModel(
+            name='FileModel',
+            fields=[
+                ('id', models.AutoField(
+                    verbose_name='ID', serialize=False,
+                    auto_created=True, primary_key=True)),
+                ('file_type', models.CharField(
+                    max_length=35, verbose_name='file type',
+                    choices=[('image', 'Image'), ('file', 'Document')])),
+                ('uploaded_file', models.FileField(
+                    upload_to=zinnia_tinymce.models.upload_path,
+                    verbose_name='file / image')),
+                ('creation_date', models.DateTimeField(
+                    auto_now_add=True, verbose_name='creation date')),
+            ],
+            options={
+                'ordering': ['-creation_date'],
+                'verbose_name': 'file',
+                'verbose_name_plural': 'files',
+            },
+            bases=(models.Model,),
+        ),
+    ]
