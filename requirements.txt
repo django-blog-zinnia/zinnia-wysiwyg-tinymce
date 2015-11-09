@@ -1,0 +1,4 @@
+django-blog-zinnia
+django-contrib-comments
+sorl-thumbnail
+django-tinymce
