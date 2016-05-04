@@ -2,15 +2,13 @@
 URLs for list of links in TinyMCE
 """
 from django.conf.urls import url
-from django.conf.urls import patterns
 
 from zinnia_tinymce.views import FileLinksView
 from zinnia_tinymce.views import ImageLinksView
 from zinnia_tinymce.views import EntryLinksView
 
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^links.js$',
         EntryLinksView.as_view(),
         name='tinymce-external-links'),
@@ -20,4 +18,4 @@ urlpatterns = patterns(
     url(r'^files.js$',
         FileLinksView.as_view(),
         name='tinymce-external-files'),
-)
+]
