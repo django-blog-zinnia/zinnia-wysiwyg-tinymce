@@ -1,24 +1,22 @@
 """Urls for the zinnia-tinymce demo"""
 from django.conf import settings
-from django.contrib import admin
-from django.conf.urls import url
 from django.conf.urls import include
-
-from django.views.static import serve
-from django.views.defaults import bad_request
-from django.views.defaults import server_error
-from django.views.defaults import page_not_found
-from django.views.defaults import permission_denied
-from django.views.generic.base import RedirectView
+from django.conf.urls import url
+from django.contrib import admin
 from django.contrib.sitemaps.views import index
 from django.contrib.sitemaps.views import sitemap
+from django.views.defaults import bad_request
+from django.views.defaults import page_not_found
+from django.views.defaults import permission_denied
+from django.views.defaults import server_error
+from django.views.generic.base import RedirectView
+from django.views.static import serve
 
-from zinnia.sitemaps import TagSitemap
-from zinnia.sitemaps import EntrySitemap
-from zinnia.sitemaps import CategorySitemap
 from zinnia.sitemaps import AuthorSitemap
+from zinnia.sitemaps import CategorySitemap
+from zinnia.sitemaps import EntrySitemap
+from zinnia.sitemaps import TagSitemap
 
-admin.autodiscover()
 
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url='/blog/', permanent=True)),

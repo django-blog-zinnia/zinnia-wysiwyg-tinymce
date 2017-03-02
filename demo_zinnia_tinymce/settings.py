@@ -1,7 +1,7 @@
 """Settings for the zinnia-tinymce demo"""
 import os
 
-gettext = lambda s: s
+gettext = lambda s: s  # noqa
 
 DEBUG = True
 
@@ -48,21 +48,25 @@ LANGUAGES = (
     ('ca', gettext('Catalan')),
     ('tr', gettext('Turkish')),
     ('sv', gettext('Swedish')),
+    ('is', gettext('Icelandic')),
     ('hr_HR', gettext('Croatian')),
     ('pt_BR', gettext('Brazilian Portuguese')),
     ('fa_IR', gettext('Persian')),
     ('fi_FI', gettext('Finnish')),
-    ('zh_CN', gettext('Simplified Chinese')),
+    ('uk_UA', gettext('Ukrainian')),
+    ('zh-hans', gettext('Simplified Chinese')),
 )
 
-MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-)
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
 
 ROOT_URLCONF = 'demo_zinnia_tinymce.urls'
 
