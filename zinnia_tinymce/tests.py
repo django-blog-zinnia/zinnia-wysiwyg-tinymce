@@ -1,7 +1,7 @@
 """Test cases for zinnia-tinymce"""
-from django.test import TestCase
-from django.test import RequestFactory
 from django.contrib.admin.sites import AdminSite
+from django.test import RequestFactory
+from django.test import TestCase
 
 from zinnia.models.entry import Entry
 from zinnia.signals import disconnect_entry_signals

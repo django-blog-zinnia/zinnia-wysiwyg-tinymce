@@ -4,9 +4,9 @@ URLs for filebrowser in TinyMCE
 from django.conf.urls import url
 from django.views.generic import View
 
-from zinnia_tinymce.views import RemoveFileView
-from zinnia_tinymce.views import FileBrowserView
 from zinnia_tinymce.views import FileBrowserCallBackView
+from zinnia_tinymce.views import FileBrowserView
+from zinnia_tinymce.views import RemoveFileView
 
 
 urlpatterns = [

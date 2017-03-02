@@ -1,6 +1,6 @@
 """Defaults urls for the Zinnia TinyMCE"""
-from django.conf.urls import url
 from django.conf.urls import include
+from django.conf.urls import url
 
 
 urlpatterns = [

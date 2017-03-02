@@ -3,9 +3,9 @@ URLs for list of links in TinyMCE
 """
 from django.conf.urls import url
 
+from zinnia_tinymce.views import EntryLinksView
 from zinnia_tinymce.views import FileLinksView
 from zinnia_tinymce.views import ImageLinksView
-from zinnia_tinymce.views import EntryLinksView
 
 
 urlpatterns = [
