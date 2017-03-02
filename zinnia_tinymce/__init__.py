@@ -1,5 +1,5 @@
 """TinyMCE for Django-blog-zinnia"""
-__version__ = '1.3'
+__version__ = '1.4'
 __license__ = 'BSD License'
 
 __author__ = 'Fantomas42'
