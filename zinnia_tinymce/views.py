@@ -1,14 +1,14 @@
 """
 Views for filebrowser in TinyMCE
 """
+from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import get_object_or_404
-from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView
-from django.views.generic.base import RedirectView
-from django.views.generic.base import TemplateView
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_control
-from django.contrib.admin.views.decorators import staff_member_required
+from django.views.generic.base import RedirectView
+from django.views.generic.base import TemplateView
+from django.views.generic.edit import CreateView
+from django.views.generic.list import ListView
 
 from zinnia.models import Entry
 

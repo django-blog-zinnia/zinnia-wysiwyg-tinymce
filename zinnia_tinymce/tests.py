@@ -1,7 +1,7 @@
 """Test cases for zinnia-tinymce"""
-from django.test import TestCase
-from django.test import RequestFactory
 from django.contrib.admin.sites import AdminSite
+from django.test import RequestFactory
+from django.test import TestCase
 
 from zinnia.models.entry import Entry
 from zinnia.signals import disconnect_entry_signals
@@ -30,16 +30,13 @@ class EntryAdminTinyMCETestCase(BaseAdminTestCase):
         medias = self.admin.media
         self.assertEqual(
             medias._css, {})
-        self.assertEqual(
-            medias._js,
-            ['/static/admin/js/core.js',
-             '/static/admin/js/admin/RelatedObjectLookups.js',
-             '/static/admin/js/jquery.min.js',
-             '/static/admin/js/jquery.init.js',
-             '/static/admin/js/actions.min.js',
-             '/static/admin/js/urlify.js',
-             '/static/admin/js/prepopulate.min.js',
-             '/static/tiny_mce/tiny_mce.js',
-             'django_tinymce/init_tinymce.js',
-             '/tinymce/js/textareas/admin/zinnia/entry/',
-             '/tinymce/zinnia/filebrowser/callback.js'])
+        jss = [
+            'admin/js/core.js',
+            'tiny_mce/tiny_mce.js',
+            'django_tinymce/init_tinymce.js',
+            'textareas/admin/zinnia/entry/',
+            'zinnia/filebrowser/callback.js'
+        ]
+        medias_string = '$'.join(medias._js)
+        for js in jss:
+            self.assertTrue(js in medias_string)

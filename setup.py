@@ -1,6 +1,6 @@
 """Setup script of zinnia-wysiwyg-tinymce"""
-from setuptools import setup
 from setuptools import find_packages
+from setuptools import setup
 
 import zinnia_tinymce
 
@@ -32,6 +32,6 @@ setup(
     license=zinnia_tinymce.__license__,
     include_package_data=True,
     zip_safe=False,
-    install_requires=['django-tinymce',
+    install_requires=['django-tinymce<=2.2.0',
                       'sorl-thumbnail']
 )
